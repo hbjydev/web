@@ -4,7 +4,7 @@
         :class="{ 'shadow-xl': hasScrolled }"
     >
         <div class="w-full px-6 justify-between flex items-center">
-            <span class="font-bold text-white text-lg">Hayden</span>
+            <a href="/" class="font-bold text-white text-lg">Hayden</a>
             <div class="flex items-center gap-2">
                 <a class="py-2 px-3 text-sm rounded hover:bg-primary-900 hover:text-primary-300 text-default-300" :href="item.link" v-for="(item, idx) in menuItems" :v-key="idx">
                     {{ item.label }}
@@ -18,7 +18,7 @@
         :class="{ 'shadow-xl': hasScrolled }"
     >
         <div class="w-full px-6 justify-between flex items-center">
-            <span class="font-bold text-white text-lg">Hayden</span>
+            <a href="/" class="font-bold text-white text-lg">Hayden</a>
             <div class="flex items-center justify-center">
                 <button @click="open = !open">
                     <!-- TODO: Replace with icon -->
