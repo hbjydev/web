@@ -49,7 +49,6 @@ const open = ref(false);
 const hasScrolled = ref(false);
 
 const menuItems = [
-    { label: 'Home', link: '/' },
     { label: 'Posts', link: '/posts' },
     { label: 'Projects', link: '/projects' },
     { label: 'GitHub', link: 'https://github.com/hbjydev' },
