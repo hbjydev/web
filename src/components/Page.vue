@@ -1,8 +1,8 @@
 <template>
-    <div class="pt-8 max-w-screen-xl mx-auto w-full">
-        <div class="flex flex-col" v-if="props.title">
-            <h1 class="text-default-200 text-4xl font-bold mb-4">{{ props.title }}</h1>
-            <p class="font-serif italic mb-8 text-default-200 leading-none">{{ props.subtitle }}</p>
+    <div class="max-w-screen-xl mx-auto w-full px-6" :class="{ 'pt-8': !noTopPadding }">
+        <div class="flex flex-col" v-if="title">
+            <h1 class="text-default-200 text-4xl font-bold mb-4">{{ title }}</h1>
+            <p class="font-serif italic mb-8 text-default-200 leading-none">{{ subtitle }}</p>
         </div>
 
         <div>
@@ -15,7 +15,8 @@
 interface Props {
     title?: string;
     subtitle?: string;
+    noTopPadding?: boolean;
 }
 
-const props = defineProps<Props>();
+const { noTopPadding = false, title, subtitle } = defineProps<Props>();
 </script>

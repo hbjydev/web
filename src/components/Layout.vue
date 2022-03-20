@@ -5,7 +5,7 @@ import Navbar from "./Navbar.vue";
 <template>
   <div class="flex-grow bg-default-800 text-default-400 antialiased">
     <Navbar />
-    <main class="mt-16 h-full flex flex-col px-6">
+    <main class="mt-16 h-full flex flex-col">
       <slot />
     </main>
   </div>
