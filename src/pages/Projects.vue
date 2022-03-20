@@ -1,8 +1,5 @@
 <template>
-    <div class="pt-8 max-w-screen-xl mx-auto w-full">
-        <h1 class="text-default-200 text-4xl font-bold mb-4">Projects</h1>
-        <p class="font-serif italic mb-8 text-default-200 leading-none">They're made of stuff. And I've done {{ projects.length }} somewhat noticed ones.</p>
-
+    <Page title="Projects" :subtitle="`They're made of stuff. And I've done ${projects.length} somewhat noticed ones.`">
         <div v-if="projects.length > 0" :v-key="idx" v-for="(project, idx) in projects">
             <a class="mb-6 flex flex-col md:flex-row gap-2 md:gap-8" :href="project.html_url" target="_blank">
                 <div class="md:flex-1 flex flex-col gap-4">
@@ -38,11 +35,12 @@
         <div v-else>
             Loading...
         </div>
-    </div>
+    </Page>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import Page from '../components/Page.vue';
 
 interface Repo {
     name: string;
