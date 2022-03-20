@@ -1,13 +1,10 @@
 <template>
     <Page title="Projects" :subtitle="`They're made of stuff. And I've done ${projects.length} somewhat noticed ones.`">
         <div v-if="projects.length > 0" :v-key="idx" v-for="(project, idx) in projects">
-            <a class="mb-6 flex flex-col md:flex-row gap-2 md:gap-8" :href="project.html_url" target="_blank">
-                <div class="md:flex-1 flex flex-col gap-4">
+            <a class="mb-6 flex flex-col lg:flex-row gap-2 lg:gap-8" :href="project.html_url" target="_blank">
+                <div class="lg:flex-1 flex gap-4">
                     <h1 class="text-2xl font-bold">{{ project.name }}</h1>
-                </div>
-                <div class="md:flex-[2] flex flex-col">
-                    <p class="font-serif leading-loose text-sm">{{ project.description }}</p>
-                    <div :id="`project-${idx}-stats`" class="flex justify-between items-center h-8">
+                    <div :id="`project-${idx}-stats`" class="flex gap-4 items-center h-8">
                         <div class="flex h-8 items-center gap-1 text-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -28,6 +25,9 @@
                             {{ project.watchers_count }}
                         </div>
                     </div>
+                </div>
+                <div class="lg:flex-[2] flex flex-col">
+                    <p class="leading-loose text-sm">{{ project.description }}</p> 
                 </div>
             </a>
             <hr v-if="idx != projects.length - 1" class="border-t-2 border-t-default-600 mb-6" />
